@@ -1,13 +1,14 @@
 {
   "pages": [
-    "pages/index/main",
-    "pages/logs/main"
-    
+    "pages/home/main",
+    "pages/user/main",
+    "pages/interview/main",
+    "pages/service/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "一面而就",
     "navigationBarTextStyle": "black"
   }
 }
