@@ -2,6 +2,8 @@
   "pages": [
     "pages/home/main",
     "pages/user/main",
+    "pages/add/main",
+    "pages/address/main",
     "pages/interview/main",
     "pages/service/main"
   ],
@@ -10,5 +12,10 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "一面而就",
     "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
 }

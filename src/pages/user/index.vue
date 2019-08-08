@@ -11,14 +11,14 @@
         <div class="cont">
             <ul>
                 <li @click="myinterview">
-                    <img src="/static/images/arrow.svg" alt="">
+                    <i class="iconfont icon-wode"></i>
                     <span class="middle">我的面试</span>
-                    <span class="right">></span>
+                    <img src="/static/images/arrow.svg" alt="">
                 </li>
                 <li @click="myCustomer">
-                    <img src="/static/images/arrow.svg" alt="">
+                    <i class="iconfont icon-wode"></i>
                     <span class="middle">客服中心</span>
-                    <span class="right">></span>
+                    <img src="/static/images/arrow.svg" alt="">
                 </li>
             </ul>
         </div>
@@ -74,13 +74,14 @@ export default {
     height: 120rpx;
     display: flex;
     align-items: center;
+    padding-left: 30rpx;
     border-bottom: 1px solid #ccc;
     color: #858585
 }
 .cont>ul>li>img {
     width: 40rpx;
     height: 40rpx;
-    margin-left: 20rpx;
+    margin-left: 450rpx;
 }
 .middle {
     font-size: 35rpx;

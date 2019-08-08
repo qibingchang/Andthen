@@ -1,13 +1,22 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import Vuex from 'vuex';
-import CreateLogger from 'vuex/dist/logger'
+import CreateLogger from 'vuex/dist/logger';
+
+// 引入store子模块
+import home from './modules/home';
+import address from './modules/address';
+import sing from './modules/sing'
+import interview from './modules/interview'
 
 Vue.use(Vuex);
 
 
 export default new Vuex.Store({
-    modules:{
-        home
-    },
-    plugins:[CreateLogger()]
+  modules: {
+    address,
+    home,
+    sing,
+    interview
+  },
+  plugins: [CreateLogger()]
 })
