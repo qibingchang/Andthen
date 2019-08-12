@@ -18,9 +18,68 @@ export function formatTime (date) {
   return `${t1} ${t2}`
 }
 
+// 获取用户定位
+export function getLocation() {
+  return new Promise((resolve, reject) => {
+    wx.getLocation({
+      type: 'gcj02',
+      success(res) {
+        resolve(res);
+      }
+    })
+  })
+}
 
+/**
+ * 通用授权逻辑
+ * @export
+ * @param {*} scope 权限信息
+ * @param {*} callback 授权成功回调
+ */
+export function getAuth(scope, callback) {
+  wx.getSetting({
+    success: res => {
+      // 如果已授权
+      if (res.authSetting[scope]) {
+        callback();
+      } else {
+        wx.authorize({
+          scope,
+          success: callback,
+          fail: () => {
+            wx.showModal({
+              title: '亲爱的用户', //提示的标题,
+              content: '同意我们的授权，让我们为你提供更加优质的服务', //提示的内容,
+              showCancel: false, //是否显示取消按钮,
+              confirmText: '去设置', //确定按钮的文字，默认为取消，最多 4 个字符,
+              confirmColor: '#3CC51F',   //确定按钮的文字颜色
+              success: res => {
+                wx.openSetting()
+              }
+            })
+          }
+        })
+      }
+    }
+  })
+}
+
+// 函数去抖
+export function debounce(func, delay){
+  var timer=null;
+  return function(){
+    var context=this, args=arguments;
+    clearTimeout(timer);
+    timer=setTimeout(function(){
+      func.apply(context,args);
+    }, delay);
+  }
+}
 
 export default {
   formatNumber,
-  formatTime
+  formatTime,
+  getLocation,
+  getAuth,
+  debounce
 }

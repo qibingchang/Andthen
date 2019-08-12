@@ -13,8 +13,8 @@
 		"checkInvalidKey": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.7.7",
-	"appid": "wx50cc17bb55db42ba",
+	"libVersion": "2.8.0",
+	"appid": "wx3375420e2c184d34",
 	"projectname": "miniprogram-test-1",
 	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {

@@ -1,22 +1,30 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import CreateLogger from 'vuex/dist/logger';
+import Vue from "vue";
+import Vuex from "vuex";
+// import createLogger from 'vuex/dist/logger';
 
-// 引入store子模块
-import home from './modules/home';
-import address from './modules/address';
-import sing from './modules/sing'
-import interview from './modules/interview'
+// 挂载modules
+import map from "./modules/map";
+import interview from "./modules/interview";
+import sign from "./modules/sign";
+import user from "./modules/user";
 
 Vue.use(Vuex);
 
-
 export default new Vuex.Store({
   modules: {
-    address,
-    home,
-    sing,
-    interview
+    map,
+    interview,
+    user,
+    sign
   },
-  plugins: [CreateLogger()]
-})
+  state: {
+    info: {} // 用户信息
+  },
+  mutations: {
+    // 更新全局的state
+    updateState(state, payload) {
+      state.info = payload;
+    }
+  }
+  // plugins: [createLogger()]
+});
